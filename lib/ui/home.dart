@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:super_zoundv2/data/Album.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  Home({super.key});
+
+  final albums = [Album('1', 'Parachutes', 'ColdPaly', '2002', 'https://avatars.githubusercontent.com/u/128727709?s=400&u=8fdd3a2adfe01e35d376966deafd4b769d155ee5&v=4')];
 
   @override
   Widget build(BuildContext context) {
@@ -10,21 +13,21 @@ class Home extends StatelessWidget {
         title: const Text('AppSuperZound'),
       ),
       body: ListView.builder(
-        itemCount: 1,
+        itemCount: albums.length,
         itemBuilder: (context, index) {
-          return const Card(
+          return Card(
             child: ListTile(
-              title: Text("Parachutes"),
+              title: Text(albums[index].name),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("ColdPlay"),
-                  Text("2000")
+                  Text(albums[index].artist),
+                  Text(albums[index].yearReleased),
                 ],
               ),
               leading: Image(
                 image: NetworkImage(
-                  'https://avatars.githubusercontent.com/u/128727709?s=400&u=8fdd3a2adfe01e35d376966deafd4b769d155ee5&v=4'
+                  albums[index].urlPoster,
                 )
               )
             ),
