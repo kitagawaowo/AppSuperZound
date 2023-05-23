@@ -16,11 +16,17 @@ class Home extends StatelessWidget {
             child: ListTile(
               title: Text("Parachutes"),
               subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("ColdPlay"),
                   Text("2000")
                 ],
               ),
+              leading: Image(
+                image: NetworkImage(
+                  'https://avatars.githubusercontent.com/u/128727709?s=400&u=8fdd3a2adfe01e35d376966deafd4b769d155ee5&v=4'
+                )
+              )
             ),
           );
         } ),
